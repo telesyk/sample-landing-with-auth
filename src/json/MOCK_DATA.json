@@ -1,0 +1,65 @@
+{
+  "global": {
+    "navigation": {
+      "header": [
+        {
+          "title": "Home",
+          "url": "/"
+        },
+        {
+          "title": "Product",
+          "url": "/product"
+        },
+        {
+          "title": "Company",
+          "url": "/company"
+        }
+      ],
+      "footer": [
+        {
+          "title": "Home",
+          "url": "/"
+        },
+        {
+          "title": "Product",
+          "url": "/product"
+        },
+        {
+          "title": "Company",
+          "url": "/company"
+        }
+      ],
+      "user": [
+        {
+          "title": "My Settings",
+          "url": "/settings"
+        }
+      ],
+      "authorized": [
+        {
+          "title": "Home",
+          "url": "/"
+        },
+        {
+          "title": "Product",
+          "url": "/product"
+        },
+        {
+          "title": "Company",
+          "url": "/company"
+        },
+        {
+          "title": "My Settings",
+          "url": "/settings"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "home": {
+      "heading": "Find the Best Solution in Seconds",
+      "subtitle": "If debugging is the process of removing software bugs.",
+      "content": ""
+    }
+  }
+}

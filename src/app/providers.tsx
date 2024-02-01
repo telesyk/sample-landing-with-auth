@@ -1,7 +1,7 @@
 'use client'
 
 import { NextUIProvider } from '@nextui-org/react'
-import { SessionProvider } from '@/app/components'
+import { SessionProvider } from '@/components'
 
 export function Providers({
   children,

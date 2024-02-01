@@ -1,11 +1,13 @@
 import type { Metadata } from 'next'
-import { Providers } from './providers'
-import { Navbar } from './components'
 import { getServerSession } from 'next-auth'
-import { Roboto } from 'next/font/google'
+import { fetchServerData } from '@/utils'
+import { MOCK_ENDPOINT } from '@/constants'
+import { Providers } from './providers'
+import { Navbar } from '@/components'
+import { Poppins } from 'next/font/google'
 import './globals.css'
 
-const roboto = Roboto({
+const poppins = Poppins({
   weight: ['300', '400', '500', '700', '900'],
   style: ['normal', 'italic'],
   subsets: ['latin'],
@@ -23,15 +25,19 @@ export default async function RootLayout({
   children: React.ReactNode
 }>) {
   const session = await getServerSession()
+  const data = await fetchServerData(MOCK_ENDPOINT)
+  const {
+    global: {
+      navigation: { header },
+    },
+  } = data
 
   return (
     <html lang="en">
-      <body className={roboto.className}>
+      <body className={poppins.className}>
         <Providers sessionProps={{ session: session }}>
-          <Navbar />
-          <main className="mx-auto max-w-7xl min-h-screen p-24">
-            {children}
-          </main>
+          <Navbar menuItems={header} />
+          <main className="min-h-screen -mt-16">{children}</main>
         </Providers>
       </body>
     </html>
