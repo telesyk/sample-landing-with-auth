@@ -1,14 +1,14 @@
 export default function Container({
   children,
   className = '',
-  isDefaultClasses = true,
+  isDefaultClasses = true, // if set to false it rewrite default classes
 }: {
   children: React.ReactNode
   className?: string
   isDefaultClasses?: boolean
 }) {
   const classes = isDefaultClasses
-    ? `mx-auto max-w-7xl px-6 md:px-10 ${className}`
+    ? `mx-auto max-w-7xl px-6 ${className}`
     : className
   return <div className={classes}>{children}</div>
 }

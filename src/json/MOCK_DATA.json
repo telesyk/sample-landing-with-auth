@@ -57,9 +57,13 @@
   },
   "pages": {
     "home": {
-      "heading": "Find the Best Solution in Seconds",
-      "subtitle": "If debugging is the process of removing software bugs.",
-      "content": ""
+      "hero": {
+        "title": "Find the Best Solution in Seconds",
+        "subtitle": "If debugging is the process of removing software bugs.",
+        "content": "",
+        "imageSrc": "/hero.png",
+        "preloadImageSrc": "/hero_preload.png"
+      }
     }
   }
 }

@@ -20,14 +20,17 @@ type menuItem = {
   url: string
 }
 
-// const menuItems = menuItem[]
-
 export default function AppNavbar({ menuItems }: { menuItems: menuItem[] }) {
   const { data: session } = useSession()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
-    <Navbar shouldHideOnScroll onMenuOpenChange={setIsMenuOpen}>
+    <Navbar
+      shouldHideOnScroll
+      onMenuOpenChange={setIsMenuOpen}
+      maxWidth="xl"
+      className="dark bg-transparent backdrop-filter-none"
+    >
       <NavbarContent>
         {/* authoorization check */}
         {session && (
@@ -36,7 +39,7 @@ export default function AppNavbar({ menuItems }: { menuItems: menuItem[] }) {
             className="md:hidden"
           />
         )}
-        <NavbarBrand>
+        <NavbarBrand className="stroke-foreground text-foreground">
           <AcmeLogo />
           <p className="font-bold text-inherit">ACME</p>
         </NavbarBrand>
