@@ -29,7 +29,12 @@ export default function AppNavbar({ menuItems }: { menuItems: menuItem[] }) {
       shouldHideOnScroll
       onMenuOpenChange={setIsMenuOpen}
       maxWidth="xl"
-      className="dark bg-transparent backdrop-filter-none"
+      classNames={{
+        base: `flex z-40 w-full h-auto items-center justify-center 
+        data-[menu-open=true]:border-none sticky top-0 
+        inset-x-0 dark bg-transparent backdrop-saturate-100
+        backdrop-blur-lg data-[menu-open=true]:backdrop-blur-xl`,
+      }}
     >
       <NavbarContent>
         {/* authoorization check */}
@@ -46,7 +51,7 @@ export default function AppNavbar({ menuItems }: { menuItems: menuItem[] }) {
       </NavbarContent>
       {/* authoorization check */}
       {session && (
-        <NavbarContent className="hidden md:flex gap-4" justify="center">
+        <NavbarContent className="hidden md:flex gap-8" justify="center">
           {menuItems.map((item, index) => (
             <NavbarItem key={`${item}-${index}`}>
               <Link color="foreground" href={item.url}>

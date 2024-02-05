@@ -1,7 +1,12 @@
 import { fetchServerData } from '@/utils'
 import { MOCK_ENDPOINT } from '@/constants'
-import { HomeAbout, HomeHero, HomePricing, HomeSubscribe } from '@/components'
-import { HomeProvider } from '@/components/HomeContainer/context'
+import {
+  HomeAbout,
+  HomeHero,
+  HomePricing,
+  HomeSubscribe,
+  HomeProvider,
+} from '@/components'
 
 export default async function Home() {
   const data = await fetchServerData(MOCK_ENDPOINT)
