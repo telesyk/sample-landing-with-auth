@@ -7,3 +7,8 @@ export type SectionType = {
   imageSrc?: string
   preloadImageSrc?: string
 }
+
+export type MenuItemType = {
+  title: string
+  url: string
+}

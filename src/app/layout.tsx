@@ -28,7 +28,7 @@ export default async function RootLayout({
   const data = await fetchServerData(MOCK_ENDPOINT)
   const {
     global: {
-      navigation: { header },
+      navigation: { header, user },
     },
   } = data
 
@@ -36,7 +36,7 @@ export default async function RootLayout({
     <html lang="en">
       <body className={poppins.className}>
         <Providers sessionProps={{ session: session }}>
-          <Navbar menuItems={header} />
+          <Navbar menu={{ navMenu: header, userMenu: user }} />
           <main className="min-h-screen -mt-16">{children}</main>
         </Providers>
       </body>

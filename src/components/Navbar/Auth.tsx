@@ -12,8 +12,16 @@ import {
 } from '@nextui-org/react'
 import { FaUserCircle } from 'react-icons/fa'
 import { Session } from 'next-auth'
+import { MenuItemType } from '@/types'
+import Link from 'next/link'
 
-export default function AuthButton({ session }: { session: Session | any }) {
+export default function Auth({
+  session,
+  menu,
+}: {
+  session: Session | any
+  menu?: MenuItemType[]
+}) {
   if (session)
     return (
       <NavbarContent as="div" justify="end">
@@ -39,7 +47,12 @@ export default function AuthButton({ session }: { session: Session | any }) {
                 <p className="font-semibold">{session.user.name}</p>
               </DropdownItem>
             )}
-            <DropdownItem key="settings">My Settings</DropdownItem>
+            {menu &&
+              menu.map((item: MenuItemType) => (
+                <DropdownItem key={item.title}>
+                  <Link href={item.url}>{item.title}</Link>
+                </DropdownItem>
+              ))}
             <DropdownItem key="logout" onClick={() => signOut()} color="danger">
               Log Out
             </DropdownItem>

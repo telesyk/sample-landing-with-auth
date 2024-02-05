@@ -1,7 +1,6 @@
 import { default as Navbar } from './Navbar'
 import Container from './Container'
 import SessionProvider from './SessionProvider'
-import AuthButton from './Buttons/AuthButton'
 import Heading from './Heading'
 import SectionContainer from './SectionContainer'
 import SectionLoader from './SectionLoader'
@@ -18,7 +17,6 @@ import { default as CompanySubscribe } from './CompanyContainer/SectionSubscribe
 import { CompanyProvider } from './CompanyContainer/context'
 
 export {
-  AuthButton,
   Container,
   Navbar,
   SessionProvider,

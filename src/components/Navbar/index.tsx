@@ -13,16 +13,20 @@ import {
   NavbarMenuItem,
 } from '@nextui-org/react'
 import { AcmeLogo } from '@/components/icons'
-import { AuthButton } from '@/components'
+import Auth from './Auth'
+import { MenuItemType } from '@/types'
 
-type menuItem = {
-  title: string
-  url: string
-}
-
-export default function AppNavbar({ menuItems }: { menuItems: menuItem[] }) {
+export default function AppNavbar({
+  menu,
+}: {
+  menu: {
+    navMenu: MenuItemType[]
+    userMenu?: MenuItemType[]
+  }
+}) {
   const { data: session } = useSession()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const { navMenu, userMenu } = menu
 
   return (
     <Navbar
@@ -52,7 +56,7 @@ export default function AppNavbar({ menuItems }: { menuItems: menuItem[] }) {
       {/* authoorization check */}
       {session && (
         <NavbarContent className="hidden md:flex gap-8" justify="center">
-          {menuItems.map((item, index) => (
+          {navMenu.map((item, index) => (
             <NavbarItem key={`${item}-${index}`}>
               <Link color="foreground" href={item.url}>
                 {item.title}
@@ -63,19 +67,19 @@ export default function AppNavbar({ menuItems }: { menuItems: menuItem[] }) {
       )}
       <NavbarContent justify="end">
         <NavbarItem>
-          <AuthButton session={session} />
+          <Auth session={session} menu={userMenu} />
         </NavbarItem>
       </NavbarContent>
       {/* authoorization check */}
       {session && (
         <NavbarMenu>
-          {menuItems.map((item, index) => (
+          {navMenu.map((item, index) => (
             <NavbarMenuItem key={`${item}-${index}`}>
               <Link
                 color={
                   index === 2
                     ? 'primary'
-                    : index === menuItems.length - 1
+                    : index === navMenu.length - 1
                       ? 'danger'
                       : 'foreground'
                 }
