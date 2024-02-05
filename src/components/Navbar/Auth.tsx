@@ -37,7 +37,7 @@ export default function Auth({
                 src={session.user.image}
               />
             ) : (
-              <FaUserCircle className="w-8 h-8 border-2 rounded-full p-0.5" />
+              <FaUserCircle className="w-8 h-8 border-2 border-foreground rounded-full p-0.5" />
             )}
           </DropdownTrigger>
           <DropdownMenu aria-label="Profile Actions" variant="flat">
