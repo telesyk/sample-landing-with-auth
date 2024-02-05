@@ -37,12 +37,15 @@ export default function Heading({
     ) : variation === 'lg' ? (
       <>
         {headerLG(children, 'text-4xl lg:text-[46px] font-medium leading-snug')}
-        {subheading && subheader('text-md leading-normal')}
+        {subheading &&
+          subheader(
+            'text-md leading-normal text-foreground-600 dark:text-foreground-300'
+          )}
       </>
     ) : (
       <>
         {headerMD(children, 'text-2xl lg:text-3xl font-bold leading-tight')}
-        {subheading && subheader('text-md leading-normal')}
+        {subheading && subheader('text-xs font-bold leading-normal')}
       </>
     )
 

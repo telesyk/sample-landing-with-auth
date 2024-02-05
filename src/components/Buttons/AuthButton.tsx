@@ -49,7 +49,12 @@ export default function AuthButton({ session }: { session: Session | any }) {
     )
 
   return (
-    <Button onClick={() => signIn()} color="primary" href="#" variant="flat">
+    <Button
+      radius="full"
+      onClick={() => signIn()}
+      color="primary"
+      variant="bordered"
+    >
       Sign In
     </Button>
   )

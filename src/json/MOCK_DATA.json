@@ -53,6 +53,17 @@
           "url": "/settings"
         }
       ]
+    },
+    "subscriptions": {
+      "free": {
+        "price": "0.00"
+      },
+      "professional": {
+        "price": "9.99"
+      },
+      "business": {
+        "price": "19.99"
+      }
     }
   },
   "pages": {
@@ -63,6 +74,20 @@
         "content": "",
         "imageSrc": "/hero.png",
         "preloadImageSrc": "/hero_preload.png"
+      },
+      "about": {
+        "title": "Perfect solution for small businesse",
+        "content": "Being a freelancer is a rollercoaster of emotions. We built Slate to keep your freelance business less stressful. We'd love to show you what we're building...",
+        "imageSrc": "/about_1.jpg",
+        "preloadImageSrc": "/about_1_blur.jpg"
+      },
+      "pricing": {
+        "title": "Simple Pricing for Your Team",
+        "subtitle": "Slate helps you see how many more days you need"
+      },
+      "subscribe": {
+        "title": "Subscribe",
+        "subtitle": "Subscribe to get exclusive news & offer"
       }
     }
   }
