@@ -15,6 +15,8 @@ import { ProductProvider } from './ProductContainer/context'
 import { default as CompanyAbout } from './CompanyContainer/SectionAbout'
 import { default as CompanySubscribe } from './CompanyContainer/SectionSubscribe'
 import { CompanyProvider } from './CompanyContainer/context'
+import { default as ProfileAbout } from './ProfileContainer/SectionAbout'
+import { ProfileProvider } from './ProfileContainer/context'
 
 export {
   Container,
@@ -34,4 +36,6 @@ export {
   CompanyProvider,
   CompanyAbout,
   CompanySubscribe,
+  ProfileProvider,
+  ProfileAbout,
 }

@@ -113,6 +113,14 @@
         "title": "Subscribe",
         "subtitle": "Subscribe to get exclusive news & offer"
       }
+    },
+    "profile": {
+      "about": {
+        "title": "Users profile",
+        "content": "Being a freelancer is a rollercoaster of emotions. We built Slate to keep your freelance business less stressful. We'd love to show you what we're building...",
+        "imageSrc": "/about_1.jpg",
+        "preloadImageSrc": "/about_1_blur.jpg"
+      }
     }
   }
 }
