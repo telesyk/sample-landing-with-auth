@@ -8,7 +8,7 @@ export default async function Profile() {
   } = data
 
   return (
-    <ProfileProvider data={profile}>
+    <ProfileProvider pageData={profile}>
       <ProfileAbout />
     </ProfileProvider>
   )

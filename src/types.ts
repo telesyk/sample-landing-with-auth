@@ -12,3 +12,8 @@ export type MenuItemType = {
   title: string
   url: string
 }
+
+export type AdditionalInfoType = {
+  location?: string
+  subscription?: string
+}
