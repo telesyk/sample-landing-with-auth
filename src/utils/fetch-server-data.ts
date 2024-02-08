@@ -1,6 +1,8 @@
-export async function fetchServerData(endpoint: string) {
+import { MOCK_ENDPOINT } from '@/constants'
+
+export async function fetchServerData() {
   try {
-    const res = await fetch(endpoint, {
+    const res = await fetch(MOCK_ENDPOINT, {
       cache: process.env.NODE_ENV ? 'no-store' : 'force-cache',
     }) /* while DEV mode */
 
