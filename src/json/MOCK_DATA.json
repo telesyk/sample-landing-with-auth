@@ -54,7 +54,7 @@
         }
       ]
     },
-    "subscriptions": {
+    "subscription": {
       "free": {
         "price": "0.00"
       },

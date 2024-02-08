@@ -14,8 +14,8 @@ export default function getDBData(tableName: string) {
 
   request.onsuccess = () => {
     const db = request.result
-    const transaction = db.transaction('cars', 'readonly')
-    const store = transaction.objectStore('cars')
+    const transaction = db.transaction(tableName, 'readonly')
+    const store = transaction.objectStore(tableName)
 
     const allDataQuery = store.getAll()
 
