@@ -1,10 +1,16 @@
 import { Skeleton } from '@nextui-org/react'
 
-export default function SectionLoader() {
+export default function SectionLoader({
+  reverse = false,
+}: {
+  reverse?: boolean
+}) {
   return (
     <div className="max-w-4xl mx-auto space-y-12">
       <div className="flex flex-col gap-10 sm:gap-20 md:gap-28 my-16 justify-center">
-        <div className="flex gap-8 sm:gap-12">
+        <div
+          className={`flex gap-8 sm:gap-12 ${reverse ? 'flex-row-reverse' : ''}`}
+        >
           <Skeleton className="rounded-lg flex-1">
             <div className="h-24 sm:h-64 rounded-lg bg-default-300"></div>
           </Skeleton>

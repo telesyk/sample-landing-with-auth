@@ -1,5 +1,4 @@
 import { fetchServerData } from '@/utils'
-import { MOCK_ENDPOINT } from '@/constants'
 import {
   HomeAbout,
   HomeHero,
@@ -9,7 +8,7 @@ import {
 } from '@/components'
 
 export default async function Home() {
-  const data = await fetchServerData(MOCK_ENDPOINT)
+  const data = await fetchServerData()
   const {
     pages: { home },
   } = data

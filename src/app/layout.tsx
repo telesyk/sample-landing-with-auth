@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import { getServerSession } from 'next-auth'
 import { fetchServerData } from '@/utils'
-import { MOCK_ENDPOINT } from '@/constants'
 import { Providers } from './providers'
 import { Navbar } from '@/components'
 import { Poppins } from 'next/font/google'
@@ -25,7 +24,7 @@ export default async function RootLayout({
   children: React.ReactNode
 }>) {
   const session = await getServerSession()
-  const data = await fetchServerData(MOCK_ENDPOINT)
+  const data = await fetchServerData()
   const {
     global: {
       navigation: { header, user },

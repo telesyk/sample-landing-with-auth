@@ -15,7 +15,6 @@ export default async function RootLayout({
     <SectionContainer
       classNames={{
         base: 'min-h-screen dark bg-background/80',
-        container: 'max-w-3xl mx-auto',
       }}
       justify="center"
     >

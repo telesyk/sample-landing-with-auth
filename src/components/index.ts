@@ -17,6 +17,7 @@ import { default as CompanySubscribe } from './CompanyContainer/SectionSubscribe
 import { CompanyProvider } from './CompanyContainer/context'
 import { default as ProfileAbout } from './ProfileContainer/SectionAbout'
 import { ProfileProvider } from './ProfileContainer/context'
+import PricingCard from './PricingCard'
 
 export {
   Container,
@@ -38,4 +39,5 @@ export {
   CompanySubscribe,
   ProfileProvider,
   ProfileAbout,
+  PricingCard,
 }

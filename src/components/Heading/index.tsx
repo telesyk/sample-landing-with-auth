@@ -3,8 +3,8 @@ import { HeadingType } from '@/types'
 type HeadingProps = {
   variation?: HeadingType
   children: React.ReactNode
-  className?: string
-  subheading?: string
+  className?: string | null | undefined
+  subheading?: string | null | undefined
 }
 
 export default function Heading({
@@ -45,7 +45,7 @@ export default function Heading({
     ) : (
       <>
         {headerMD(children, 'text-2xl lg:text-3xl font-bold leading-tight')}
-        {subheading && subheader('text-tiny font-bold leading-normal')}
+        {subheading && subheader('mt-3 text-tiny font-bold leading-normal')}
       </>
     )
 
