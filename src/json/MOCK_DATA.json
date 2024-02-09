@@ -54,15 +54,36 @@
         }
       ]
     },
-    "subscriptions": {
+    "subscription": {
       "free": {
-        "price": "0.00"
+        "price": "0.00",
+        "subtitle": "Best price Description",
+        "benefits": [
+          "Only 2 Operators",
+          "Abandoned Cart",
+          "Facebook & Instagram Ads"
+        ]
       },
       "professional": {
-        "price": "9.99"
+        "price": "9.99",
+        "subtitle": "Best price Description",
+        "benefits": [
+          "Only 2 Operators",
+          "Abandoned Cart",
+          "Facebook & Instagram Ads",
+          "Order Notifications"
+        ]
       },
       "business": {
-        "price": "19.99"
+        "price": "19.99",
+        "subtitle": "Best price Description",
+        "benefits": [
+          "Only 2 Operators",
+          "Abandoned Cart",
+          "Facebook & Instagram Ads",
+          "Order Notifications",
+          "Landing Pages"
+        ]
       }
     }
   },

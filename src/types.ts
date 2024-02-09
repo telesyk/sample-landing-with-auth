@@ -17,3 +17,16 @@ export type AdditionalInfoType = {
   location?: string
   subscription?: string
 }
+
+export type SubscriptionItemType = {
+  price: string
+  title?: string
+  subtitle?: string
+  benefits?: string[]
+}
+
+export type SubscriptionType = {
+  free: keyof string | SubscriptionItemType
+  professional: keyof string | SubscriptionItemType
+  business: keyof string | SubscriptionItemType
+}
