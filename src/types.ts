@@ -13,11 +13,6 @@ export type MenuItemType = {
   url: string
 }
 
-export type AdditionalInfoType = {
-  location?: string
-  subscription?: string
-}
-
 export type SubscriptionItemType = {
   price: string
   title?: string
@@ -25,8 +20,13 @@ export type SubscriptionItemType = {
   benefits?: string[]
 }
 
+export type AdditionalInfoType = {
+  location?: string
+  subscription?: SubscriptionItemType
+}
+
 export type SubscriptionType = {
-  free: keyof string | SubscriptionItemType
-  professional: keyof string | SubscriptionItemType
-  business: keyof string | SubscriptionItemType
+  free: SubscriptionItemType
+  professional: SubscriptionItemType
+  business: SubscriptionItemType
 }
