@@ -3,14 +3,14 @@
 import Image from 'next/image'
 import { Heading, PricingCard } from '..'
 import { useProfileContext } from './context'
-import { SectionType, SubscriptionType } from '@/types'
+import { SectionType, SubscriptionsType } from '@/types'
 import { Link } from '@nextui-org/react'
 import { getSubscriptionsList } from '@/utils'
 import { CURRENCY_SIGN } from '@/constants'
 
 interface SectionProps {
   about: SectionType | any
-  subscription: SubscriptionType
+  subscription: SubscriptionsType
   profile: any
   handleUserSubscriptionUpdate: () => void
 }

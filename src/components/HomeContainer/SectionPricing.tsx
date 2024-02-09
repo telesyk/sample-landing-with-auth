@@ -1,11 +1,26 @@
 'use client'
 
-import { SectionContainer, Heading, SectionLoader } from '..'
+import { getSubscriptionsList } from '@/utils'
+import { SectionContainer, Heading, SectionLoader, PricingCard } from '..'
 import { useHomeContext } from './context'
-import { SectionType } from '@/types'
+import {
+  SectionType,
+  SubscriptionType,
+  SubscriptionsImagesType,
+  SubscriptionsType,
+} from '@/types'
+
+interface PricingPageProps extends SectionType {
+  subscriptionImage: SubscriptionsImagesType
+}
+interface Props {
+  pricing: PricingPageProps
+  subscription: SubscriptionsType
+}
 
 export default function SectionPricing() {
-  const { pricing }: { pricing: SectionType | any } = useHomeContext()
+  const { pricing, subscription }: Props = useHomeContext()
+  const subscriptions = getSubscriptionsList(subscription)
 
   if (!pricing) return <SectionLoader />
 
@@ -21,7 +36,23 @@ export default function SectionPricing() {
           {pricing.title}
         </Heading>
       </div>
-      <div className="flex-1">Pricing items</div>
+      <div className="flex-1 overflow-x-auto p-5 max-w-full">
+        {subscriptions.length && (
+          <div className="flex gap-6">
+            {subscriptions.map((item: any) => (
+              <PricingCard
+                key={item.title}
+                details={{ ...item }}
+                handleClick={() => console.log('test')}
+                image={
+                  pricing.subscriptionImage[item?.title as SubscriptionType]
+                }
+                className="min-w-72"
+              />
+            ))}
+          </div>
+        )}
+      </div>
     </SectionContainer>
   )
 }

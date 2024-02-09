@@ -104,7 +104,12 @@
       },
       "pricing": {
         "title": "Simple Pricing for Your Team",
-        "subtitle": "Slate helps you see how many more days you need"
+        "subtitle": "Slate helps you see how many more days you need",
+        "subscriptionImage": {
+          "free": "/card-1.png",
+          "professional": "/card-2.png",
+          "business": "/card-3.png"
+        }
       },
       "subscribe": {
         "title": "Subscribe",

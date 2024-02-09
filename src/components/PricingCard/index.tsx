@@ -16,15 +16,17 @@ interface PricingProps {
   details: SubscriptionItemType
   handleClick: (arg: string | undefined) => void
   image?: string
+  className?: string
 }
 
 export default function PricingCard({
   details,
   handleClick,
   image = 'https://nextui.org/images/hero-card.jpeg',
+  className = '',
 }: PricingProps) {
   return (
-    <Card className="py-4">
+    <Card className={`py-4 ${className}`}>
       <CardHeader className="my-2 px-4 flex-col items-center justify-center text-center">
         <Heading
           variation="md"

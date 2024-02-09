@@ -2,13 +2,17 @@
 
 import { createContext, useContext, useEffect, useState } from 'react'
 import { useSession } from 'next-auth/react'
-import { SectionType, AdditionalInfoType, SubscriptionType } from '@/types'
-import { getSubscriptionsList, useLocalStore } from '@/utils'
+import { SectionType, AdditionalInfoType, SubscriptionsType } from '@/types'
+import {
+  getSubscriptionsList,
+  useLocalStore,
+  getSubscriptionDetails,
+} from '@/utils'
 import { STORAGE_NAME } from '@/constants'
 
 interface ProfileProps {
   about: SectionType | {}
-  subscription: SubscriptionType
+  subscription: SubscriptionsType
 }
 
 export const ProfileContext = createContext<ProfileProps | any>({})
@@ -33,8 +37,8 @@ export function ProfileProvider({
         STORAGE_NAME,
         JSON.stringify({
           // First time signup user using 'free' subscription
-          subscription: subscriptions[0],
-          location: 'EU',
+          subscription: getSubscriptionDetails(subscriptions),
+          location: 'EU', // temporaly unused
         })
       )
 
@@ -50,14 +54,14 @@ export function ProfileProvider({
   const handleUserSubscriptionUpdate = (sub: string) => {
     setState(prev => ({
       ...prev,
-      subscription: subscriptions.find(item => item.title === sub),
+      subscription: getSubscriptionDetails(subscriptions, sub),
     }))
 
     useLocalStore(
       STORAGE_NAME,
       JSON.stringify({
         ...state,
-        subscription: subscriptions.find(item => item.title === sub),
+        subscription: getSubscriptionDetails(subscriptions, sub),
       })
     )
   }

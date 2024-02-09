@@ -11,13 +11,14 @@ export default async function Home() {
   const data = await fetchServerData()
   const {
     pages: { home },
+    global: { subscription },
   } = data
 
   return (
-    <HomeProvider data={home}>
+    <HomeProvider data={{ ...home, subscription }}>
       <HomeHero />
-      <HomeAbout />
       <HomePricing />
+      <HomeAbout />
       <HomeSubscribe />
     </HomeProvider>
   )
