@@ -1,5 +1,9 @@
 'use client'
 
+import { useEffect, useState } from 'react'
+import { SubscriptionItemType } from '@/types'
+import { CURRENCY_SIGN, ANNUAL_COEF, ANNUAL_PAYMENT_TYPE } from '@/constants'
+import { splitPriceValue } from '@/utils'
 import {
   Card,
   CardHeader,
@@ -9,15 +13,13 @@ import {
   Button,
 } from '@nextui-org/react'
 import { Heading } from '..'
-import { SubscriptionItemType } from '@/types'
-import { CURRENCY_SIGN } from '@/constants'
-import { splitPriceValue } from '@/utils'
 
 interface PricingProps {
   details: SubscriptionItemType
   handleClick: (arg: string | undefined) => void
   image?: string
   className?: string
+  paymentType?: string | null
 }
 
 export default function PricingCard({
@@ -25,8 +27,28 @@ export default function PricingCard({
   handleClick,
   image,
   className = '',
+  paymentType = null,
 }: PricingProps) {
-  const priceValues = splitPriceValue(details.price)
+  const [monthlyPrice] = useState<number>(Number(details.price))
+  const [annualPrice, setAnnualPrice] = useState<number | string>(0)
+  const [priceValues, setPriceValues] = useState<number[] | []>([])
+
+  useEffect(() => {
+    if (!paymentType) {
+      setPriceValues(splitPriceValue(monthlyPrice))
+      return
+    }
+
+    if (paymentType === ANNUAL_PAYMENT_TYPE) {
+      const coefValue = monthlyPrice * ANNUAL_COEF
+      const newMonthlyPrice = monthlyPrice - coefValue
+      setAnnualPrice((newMonthlyPrice * 12).toFixed(2))
+      setPriceValues(splitPriceValue(newMonthlyPrice))
+    } else {
+      setAnnualPrice((monthlyPrice * 12).toFixed(2))
+      setPriceValues(splitPriceValue(monthlyPrice))
+    }
+  }, [paymentType])
 
   return (
     <Card className={`light py-4 ${className}`}>
@@ -59,12 +81,19 @@ export default function PricingCard({
             {priceValues[0]}
           </div>
           <div className="font-bold">
-            <div className="text-2xl text-teal-500">
-              .{priceValues[1] === 0 ? '00' : priceValues[1]}
-            </div>
+            {priceValues[0] !== 0 && (
+              <div className="text-2xl text-teal-500">.{priceValues[1]}</div>
+            )}
             <div className="text-xs">Per / month</div>
           </div>
         </div>
+        {paymentType && (
+          <div className="text-sm text-center text-foreground-400">
+            <span>{CURRENCY_SIGN}</span>{' '}
+            <span className="font-bold">{annualPrice}</span>{' '}
+            <span>pre/year</span>
+          </div>
+        )}
         {details.benefits && (
           <div className="text-center space-y-2">
             {details.benefits.map((item: string) => (
