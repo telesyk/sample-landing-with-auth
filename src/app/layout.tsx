@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { getServerSession } from 'next-auth'
 import { fetchServerData } from '@/utils'
 import { Providers } from './providers'
-import { Navbar } from '@/components'
+import { Navbar, Footer } from '@/components'
 import { Poppins } from 'next/font/google'
 import './globals.css'
 
@@ -27,7 +27,10 @@ export default async function RootLayout({
   const data = await fetchServerData()
   const {
     global: {
-      navigation: { header, user },
+      navigation: { header, user, footer },
+      address,
+      contacts,
+      copyrights,
     },
   } = data
 
@@ -37,6 +40,7 @@ export default async function RootLayout({
         <Providers sessionProps={{ session: session }}>
           <Navbar menu={{ navMenu: header, userMenu: user }} />
           <main className="min-h-screen -mt-16">{children}</main>
+          <Footer data={{ address, contacts, copyrights, links: footer }} />
         </Providers>
       </body>
     </html>

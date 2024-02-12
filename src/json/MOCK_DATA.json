@@ -88,7 +88,17 @@
         ],
         "image": "/card-3.png"
       }
-    }
+    },
+    "address": {
+      "title": "Henryetta, OK 74437, United States",
+      "link": "https://maps.app.goo.gl/L2aogwudYtYt79R27",
+      "coverImage": "/map-cover.jpg"
+    },
+    "contacts": {
+      "phone": "(239) 555-0108",
+      "email": "example@mail.com"
+    },
+    "copyrights": "2024 Company Name"
   },
   "pages": {
     "home": {

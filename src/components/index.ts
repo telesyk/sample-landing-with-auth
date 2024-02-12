@@ -18,10 +18,12 @@ import { CompanyProvider } from './CompanyContainer/context'
 import { default as ProfileAbout } from './ProfileContainer/SectionAbout'
 import { ProfileProvider } from './ProfileContainer/context'
 import PricingCard from './PricingCard'
+import Footer from './Footer'
 
 export {
   Container,
   Navbar,
+  Footer,
   SessionProvider,
   Heading,
   SectionContainer,
