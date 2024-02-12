@@ -11,6 +11,7 @@ import {
 import { Heading } from '..'
 import { SubscriptionItemType } from '@/types'
 import { CURRENCY_SIGN } from '@/constants'
+import { splitPriceValue } from '@/utils'
 
 interface PricingProps {
   details: SubscriptionItemType
@@ -22,11 +23,13 @@ interface PricingProps {
 export default function PricingCard({
   details,
   handleClick,
-  image = 'https://nextui.org/images/hero-card.jpeg',
+  image,
   className = '',
 }: PricingProps) {
+  const priceValues = splitPriceValue(details.price)
+
   return (
-    <Card className={`py-4 ${className}`}>
+    <Card className={`light py-4 ${className}`}>
       <CardHeader className="my-2 px-4 flex-col items-center justify-center text-center">
         <Heading
           variation="md"
@@ -36,19 +39,31 @@ export default function PricingCard({
           {details.title}
         </Heading>
       </CardHeader>
-      <CardBody className="overflow-visible py-2 gap-5">
+      <CardBody className="overflow-visible py-2 gap-6">
         {image && (
           <Image
             alt="Card background"
             className="object-cover rounded-xl"
             src={image}
-            width={270}
+            width={259}
+            height={448}
+            loading="lazy"
+            fallbackSrc="./hero_preload.png"
           />
         )}
-        <div className="text-center">
-          <span className="font-bold">
-            {details.price} {CURRENCY_SIGN}
-          </span>
+        <div className="flex gap-2 items-center justify-center">
+          <div className="font-bold text-5xl text-teal-500">
+            {CURRENCY_SIGN}
+          </div>
+          <div className="font-bold text-5xl text-teal-500">
+            {priceValues[0]}
+          </div>
+          <div className="font-bold">
+            <div className="text-2xl text-teal-500">
+              .{priceValues[1] === 0 ? '00' : priceValues[1]}
+            </div>
+            <div className="text-xs">Per / month</div>
+          </div>
         </div>
         {details.benefits && (
           <div className="text-center space-y-2">

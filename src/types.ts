@@ -24,6 +24,7 @@ export type SubscriptionItemType = {
   title: string
   subtitle?: string
   benefits?: string[]
+  image?: string
 }
 
 export type AdditionalInfoType = {

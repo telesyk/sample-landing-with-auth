@@ -5,7 +5,7 @@ import { useSession } from 'next-auth/react'
 import { SectionType, AdditionalInfoType, SubscriptionsType } from '@/types'
 import {
   getSubscriptionsList,
-  useLocalStore,
+  getLocalStorage,
   getSubscriptionDetails,
 } from '@/utils'
 import { STORAGE_NAME } from '@/constants'
@@ -30,38 +30,34 @@ export function ProfileProvider({
   const subscriptions = getSubscriptionsList(pageData?.subscription)
 
   useEffect(() => {
-    const additionalUserData = useLocalStore(STORAGE_NAME)
-    if (!additionalUserData)
-      // Init first UserData
-      useLocalStore(
-        STORAGE_NAME,
-        JSON.stringify({
-          // First time signup user using 'free' subscription
-          subscription: getSubscriptionDetails(subscriptions),
-          location: 'EU', // temporaly unused
-        })
-      )
-
-    const additionalStringData = useLocalStore(STORAGE_NAME)
-    const additionalData = JSON.parse(additionalStringData)
+    // First time signup user using 'free' subscription
+    const initData = {
+      subscription: getSubscriptionDetails(subscriptions),
+      locale: navigator ? navigator?.language : 'en',
+    }
+    const currentExtraData = getLocalStorage(STORAGE_NAME)
+    const extraData = currentExtraData
+      ? currentExtraData
+      : getLocalStorage(STORAGE_NAME, JSON.stringify(initData))
 
     setState(prev => ({
       ...prev,
-      ...additionalData,
+      ...JSON.parse(extraData || ''),
     }))
   }, [])
 
   const handleUserSubscriptionUpdate = (sub: string) => {
+    const updated = getSubscriptionDetails(subscriptions, sub)
     setState(prev => ({
       ...prev,
-      subscription: getSubscriptionDetails(subscriptions, sub),
+      subscription: updated,
     }))
 
-    useLocalStore(
+    getLocalStorage(
       STORAGE_NAME,
       JSON.stringify({
         ...state,
-        subscription: getSubscriptionDetails(subscriptions, sub),
+        subscription: updated,
       })
     )
   }
@@ -72,12 +68,11 @@ export function ProfileProvider({
       ...session?.user,
       ...state,
     },
+    handleUserSubscriptionUpdate,
   }
 
   return (
-    <ProfileContext.Provider
-      value={{ ...profileData, handleUserSubscriptionUpdate }}
-    >
+    <ProfileContext.Provider value={{ ...profileData }}>
       {children}
     </ProfileContext.Provider>
   )

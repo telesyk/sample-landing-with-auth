@@ -32,7 +32,7 @@ export default function SectionAbout() {
       <Heading className="text-center mb-8" variation="lg">
         {about?.title}
       </Heading>
-      <div className="p-12 lg:24 w-full max-w-2xl mx-auto rounded-xl shadow-xl bg-foreground/10">
+      <div className="p-12 lg:24 w-full max-w-2xl mx-auto rounded-xl shadow-xl bg-foreground/10 overflow-x-visible">
         {profile && (
           <div className="flex gap-6 items-center">
             <Image
@@ -67,7 +67,7 @@ export default function SectionAbout() {
             </div>
           </div>
         </div>
-        <div className="flex justify-center gap-8 mt-12">
+        <div className="flex justify-start md:justify-center gap-8 mt-12">
           {subscriptions &&
             subscriptions.map(item => (
               <PricingCard
@@ -79,6 +79,8 @@ export default function SectionAbout() {
                   subtitle: item.subtitle,
                   benefits: item.benefits,
                 }}
+                image={item.image}
+                className="min-w-72"
               />
             ))}
         </div>

@@ -3,18 +3,10 @@
 import { getSubscriptionsList } from '@/utils'
 import { SectionContainer, Heading, SectionLoader, PricingCard } from '..'
 import { useHomeContext } from './context'
-import {
-  SectionType,
-  SubscriptionType,
-  SubscriptionsImagesType,
-  SubscriptionsType,
-} from '@/types'
+import { SectionType, SubscriptionsType } from '@/types'
 
-interface PricingPageProps extends SectionType {
-  subscriptionImage: SubscriptionsImagesType
-}
 interface Props {
-  pricing: PricingPageProps
+  pricing: SectionType
   subscription: SubscriptionsType
 }
 
@@ -44,9 +36,7 @@ export default function SectionPricing() {
                 key={item.title}
                 details={{ ...item }}
                 handleClick={() => console.log('test')}
-                image={
-                  pricing.subscriptionImage[item?.title as SubscriptionType]
-                }
+                image={item.image}
                 className="min-w-72"
               />
             ))}
