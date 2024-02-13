@@ -54,8 +54,14 @@ export default function Footer({ data }: { data: FooterProps }) {
                 isExternal
                 href={address?.link}
                 className="rounded-xl overflow-hidden"
+                title="link to Google Maps"
               >
-                <Image width={334} height={247} src={address?.coverImage} />
+                <Image
+                  alt={address.title}
+                  width={334}
+                  height={247}
+                  src={address?.coverImage}
+                />
               </Link>
             )}
           </div>
