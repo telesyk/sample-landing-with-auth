@@ -28,13 +28,12 @@ export default function Footer({ data }: { data: FooterProps }) {
   const { links, contacts, address, copyrights } = data
 
   const renderMenu = () => {
-    // const {title, url} = menuItem
-
     return (
-      <nav className="flex flex-col gap-4">
+      <nav className="columns-2 gap-x-4">
         {links?.map((item: MenuItemType) => (
           <Link
-            className="text-white hover:text-gray-100 transition-colors"
+            key={item.title}
+            className="w-full my-2 text-white hover:text-gray-100 transition-colors"
             href={item.url}
           >
             {item.title}
@@ -51,7 +50,11 @@ export default function Footer({ data }: { data: FooterProps }) {
           <div className="lg:basis-1/3">{links?.length && renderMenu()}</div>
           <div className="lg:basis-1/3">
             {address && (
-              <Link href={address?.link} className="rounded-xl overflow-hidden">
+              <Link
+                isExternal
+                href={address?.link}
+                className="rounded-xl overflow-hidden"
+              >
                 <Image width={334} height={247} src={address?.coverImage} />
               </Link>
             )}

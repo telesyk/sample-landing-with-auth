@@ -50,8 +50,12 @@ export default function PricingCard({
     }
   }, [paymentType])
 
+  const isFreePlan = priceValues[0] === 0
+
   return (
-    <Card className={`light py-4 ${className}`}>
+    <Card
+      className={`light py-4 ${isFreePlan ? 'shadow-none' : ''} ${className}`}
+    >
       <CardHeader className="my-2 px-4 flex-col items-center justify-center text-center">
         <Heading
           variation="md"
@@ -81,13 +85,13 @@ export default function PricingCard({
             {priceValues[0]}
           </div>
           <div className="font-bold">
-            {priceValues[0] !== 0 && (
+            {!isFreePlan && (
               <div className="text-2xl text-teal-500">.{priceValues[1]}</div>
             )}
             <div className="text-xs">Per / month</div>
           </div>
         </div>
-        {paymentType && (
+        {paymentType && !isFreePlan && (
           <div className="text-sm text-center text-foreground-400">
             <span>{CURRENCY_SIGN}</span>{' '}
             <span className="font-bold">{annualPrice}</span>{' '}
@@ -103,19 +107,28 @@ export default function PricingCard({
             ))}
           </div>
         )}
+        {isFreePlan && (
+          <div className="text-center space-y-2">
+            <p className="text-sm lg:text-base font-thin text-foreground-400">
+              Used by default
+            </p>
+          </div>
+        )}
       </CardBody>
-      <CardFooter>
-        <Button
-          variant="flat"
-          size="lg"
-          radius="full"
-          className="w-full"
-          color="primary"
-          onClick={() => handleClick(details.title)}
-        >
-          Order now
-        </Button>
-      </CardFooter>
+      {!isFreePlan && (
+        <CardFooter>
+          <Button
+            variant="flat"
+            size="lg"
+            radius="full"
+            className="w-full"
+            color="primary"
+            onClick={() => handleClick(details.title)}
+          >
+            Order now
+          </Button>
+        </CardFooter>
+      )}
     </Card>
   )
 }

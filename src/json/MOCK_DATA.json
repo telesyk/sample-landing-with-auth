@@ -27,6 +27,14 @@
         {
           "title": "Company",
           "url": "/company"
+        },
+        {
+          "title": "Privacy",
+          "url": "/privacy"
+        },
+        {
+          "title": "Terms",
+          "url": "/terms"
         }
       ],
       "user": [
@@ -146,6 +154,34 @@
       "subscribe": {
         "title": "Subscribe",
         "subtitle": "Subscribe to get exclusive news & offer"
+      }
+    },
+    "terms": {
+      "part1": {
+        "title": "Part 1",
+        "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem similique non architecto magni delectus officia accusamus debitis, nam a aspernatur quisquam beatae laborum itaque eius laudantium molestias voluptatum odit autem!"
+      },
+      "part2": {
+        "title": "Part 2",
+        "content": "Deleniti asperiores blanditiis ullam nesciunt, necessitatibus voluptates omnis amet libero voluptatum eos accusantium harum nobis, ducimus quas provident! Qui autem corporis quo."
+      },
+      "part3": {
+        "title": "Part 3",
+        "content": "Molestias sunt dolorem placeat earum reiciendis iusto dolorum a quibusdam laborum, odio similique ratione, deserunt voluptas minus, optio voluptatibus animi inventore sequi?"
+      }
+    },
+    "privacy": {
+      "part1": {
+        "title": "Part 1",
+        "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem similique non architecto magni delectus officia accusamus debitis, nam a aspernatur quisquam beatae laborum itaque eius laudantium molestias voluptatum odit autem!"
+      },
+      "part2": {
+        "title": "Part 2",
+        "content": "Deleniti asperiores blanditiis ullam nesciunt, necessitatibus voluptates omnis amet libero voluptatum eos accusantium harum nobis, ducimus quas provident! Qui autem corporis quo."
+      },
+      "part3": {
+        "title": "Part 3",
+        "content": "Molestias sunt dolorem placeat earum reiciendis iusto dolorum a quibusdam laborum, odio similique ratione, deserunt voluptas minus, optio voluptatibus animi inventore sequi?"
       }
     },
     "profile": {
