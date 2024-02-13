@@ -3,15 +3,15 @@ import {
   HomeAbout,
   HomeHero,
   HomePricing,
-  HomeSubscribe,
   HomeProvider,
+  Subscribe,
 } from '@/components'
 
 export default async function Home() {
   const data = await fetchServerData()
   const {
     pages: { home },
-    global: { subscription },
+    global: { subscription, subscribe },
   } = data
 
   return (
@@ -19,7 +19,7 @@ export default async function Home() {
       <HomeHero />
       <HomePricing />
       <HomeAbout />
-      <HomeSubscribe />
+      <Subscribe subscribe={subscribe} />
     </HomeProvider>
   )
 }

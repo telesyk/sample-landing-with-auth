@@ -1,4 +1,4 @@
-import { CompanyProvider, CompanyAbout, CompanySubscribe } from '@/components'
+import { CompanyProvider, CompanyAbout, Subscribe } from '@/components'
 import { fetchServerData } from '@/utils'
 import { Metadata } from 'next'
 
@@ -10,12 +10,13 @@ export default async function Company() {
   const data = await fetchServerData()
   const {
     pages: { company },
+    global: { subscribe },
   } = data
 
   return (
     <CompanyProvider data={company}>
       <CompanyAbout />
-      <CompanySubscribe />
+      <Subscribe subscribe={subscribe} />
     </CompanyProvider>
   )
 }

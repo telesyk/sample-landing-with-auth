@@ -1,4 +1,4 @@
-import { ProductProvider, ProductAbout, ProductSubscribe } from '@/components'
+import { ProductProvider, ProductAbout, Subscribe } from '@/components'
 import { fetchServerData } from '@/utils'
 import { Metadata } from 'next'
 
@@ -10,12 +10,13 @@ export default async function Product() {
   const data = await fetchServerData()
   const {
     pages: { product },
+    global: { subscribe },
   } = data
 
   return (
     <ProductProvider data={product}>
       <ProductAbout />
-      <ProductSubscribe />
+      <Subscribe subscribe={subscribe} />
     </ProductProvider>
   )
 }
