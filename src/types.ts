@@ -1,6 +1,6 @@
 export type HeadingType = 'xl' | 'lg' | 'md'
 
-export type SectionType = {
+export interface SectionType {
   title: string
   subtitle?: string
   content?: string
@@ -13,11 +13,18 @@ export type MenuItemType = {
   url: string
 }
 
+export type SubscriptionType = 'free' | 'professional' | 'business'
+
+export type SubscriptionsImagesType = {
+  [key in SubscriptionType]: string
+}
+
 export type SubscriptionItemType = {
   price: string
-  title?: string
+  title: string
   subtitle?: string
   benefits?: string[]
+  image?: string
 }
 
 export type AdditionalInfoType = {
@@ -25,8 +32,6 @@ export type AdditionalInfoType = {
   subscription?: SubscriptionItemType
 }
 
-export type SubscriptionType = {
-  free: SubscriptionItemType
-  professional: SubscriptionItemType
-  business: SubscriptionItemType
+export type SubscriptionsType = {
+  [key in SubscriptionType]: SubscriptionItemType
 }

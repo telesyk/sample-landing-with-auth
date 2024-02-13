@@ -27,6 +27,14 @@
         {
           "title": "Company",
           "url": "/company"
+        },
+        {
+          "title": "Privacy",
+          "url": "/privacy"
+        },
+        {
+          "title": "Terms",
+          "url": "/terms"
         }
       ],
       "user": [
@@ -62,7 +70,8 @@
           "Only 2 Operators",
           "Abandoned Cart",
           "Facebook & Instagram Ads"
-        ]
+        ],
+        "image": "/card-1.png"
       },
       "professional": {
         "price": "9.99",
@@ -72,7 +81,8 @@
           "Abandoned Cart",
           "Facebook & Instagram Ads",
           "Order Notifications"
-        ]
+        ],
+        "image": "/card-2.png"
       },
       "business": {
         "price": "19.99",
@@ -83,9 +93,38 @@
           "Facebook & Instagram Ads",
           "Order Notifications",
           "Landing Pages"
-        ]
+        ],
+        "image": "/card-3.png"
       }
-    }
+    },
+    "address": {
+      "title": "Henryetta, OK 74437, United States",
+      "link": "https://maps.app.goo.gl/L2aogwudYtYt79R27",
+      "coverImage": "/map-cover.jpg"
+    },
+    "contacts": {
+      "phone": "(239) 555-0108",
+      "email": "example@mail.com"
+    },
+    "copyrights": "2024 Company Name",
+    "subscribe": {
+      "title": "Subscribe",
+      "subtitle": "Subscribe to get exclusive news & offer"
+    },
+    "features": [
+      {
+        "title": "Quick & Easy Process",
+        "subtitle": "Most calendars are designed for teams. Slate is designed for freelancers who want a simple way to plan their schedule.",
+        "imageSrc": "/feature-1.png",
+        "preloadImageSrc": "/hero_preload.png"
+      },
+      {
+        "title": "Perfect for Operations HR and Finance",
+        "subtitle": "Most calendars are designed for teams. Slate is designed for freelancers who want a simple way to plan their schedule.",
+        "imageSrc": "/feature-2.png",
+        "preloadImageSrc": "/hero_preload.png"
+      }
+    ]
   },
   "pages": {
     "home": {
@@ -133,6 +172,34 @@
       "subscribe": {
         "title": "Subscribe",
         "subtitle": "Subscribe to get exclusive news & offer"
+      }
+    },
+    "terms": {
+      "part1": {
+        "title": "Part 1",
+        "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem similique non architecto magni delectus officia accusamus debitis, nam a aspernatur quisquam beatae laborum itaque eius laudantium molestias voluptatum odit autem!"
+      },
+      "part2": {
+        "title": "Part 2",
+        "content": "Deleniti asperiores blanditiis ullam nesciunt, necessitatibus voluptates omnis amet libero voluptatum eos accusantium harum nobis, ducimus quas provident! Qui autem corporis quo."
+      },
+      "part3": {
+        "title": "Part 3",
+        "content": "Molestias sunt dolorem placeat earum reiciendis iusto dolorum a quibusdam laborum, odio similique ratione, deserunt voluptas minus, optio voluptatibus animi inventore sequi?"
+      }
+    },
+    "privacy": {
+      "part1": {
+        "title": "Part 1",
+        "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem similique non architecto magni delectus officia accusamus debitis, nam a aspernatur quisquam beatae laborum itaque eius laudantium molestias voluptatum odit autem!"
+      },
+      "part2": {
+        "title": "Part 2",
+        "content": "Deleniti asperiores blanditiis ullam nesciunt, necessitatibus voluptates omnis amet libero voluptatum eos accusantium harum nobis, ducimus quas provident! Qui autem corporis quo."
+      },
+      "part3": {
+        "title": "Part 3",
+        "content": "Molestias sunt dolorem placeat earum reiciendis iusto dolorum a quibusdam laborum, odio similique ratione, deserunt voluptas minus, optio voluptatibus animi inventore sequi?"
       }
     },
     "profile": {

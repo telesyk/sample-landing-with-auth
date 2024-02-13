@@ -7,21 +7,23 @@ import SectionLoader from './SectionLoader'
 import { default as HomeAbout } from './HomeContainer/SectionAbout'
 import { default as HomeHero } from './HomeContainer/SectionHero'
 import { default as HomePricing } from './HomeContainer/SectionPricing'
-import { default as HomeSubscribe } from './HomeContainer/SectionSubscribe'
 import { HomeProvider } from './HomeContainer/context'
 import { default as ProductAbout } from './ProductContainer/SectionAbout'
-import { default as ProductSubscribe } from './ProductContainer/SectionSubscribe'
 import { ProductProvider } from './ProductContainer/context'
 import { default as CompanyAbout } from './CompanyContainer/SectionAbout'
-import { default as CompanySubscribe } from './CompanyContainer/SectionSubscribe'
 import { CompanyProvider } from './CompanyContainer/context'
 import { default as ProfileAbout } from './ProfileContainer/SectionAbout'
 import { ProfileProvider } from './ProfileContainer/context'
 import PricingCard from './PricingCard'
+import Footer from './Footer'
+import SubscribeForm from './Subscribe/SubscribeForm'
+import Subscribe from './Subscribe'
+import FeatureSection from './FeatureSection'
 
 export {
   Container,
   Navbar,
+  Footer,
   SessionProvider,
   Heading,
   SectionContainer,
@@ -30,14 +32,14 @@ export {
   HomeAbout,
   HomeHero,
   HomePricing,
-  HomeSubscribe,
   ProductProvider,
   ProductAbout,
-  ProductSubscribe,
   CompanyProvider,
   CompanyAbout,
-  CompanySubscribe,
   ProfileProvider,
   ProfileAbout,
   PricingCard,
+  SubscribeForm,
+  Subscribe,
+  FeatureSection,
 }

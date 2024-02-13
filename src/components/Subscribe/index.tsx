@@ -1,17 +1,19 @@
 'use client'
 
-import { SectionContainer, Heading, SectionLoader } from '..'
-import { useHomeContext } from './context'
+import { SectionContainer, Heading, SectionLoader, SubscribeForm } from '..'
 import { SectionType } from '@/types'
 
-export default function SectionSubscribe() {
-  const { subscribe }: { subscribe: SectionType | any } = useHomeContext()
-
+export default function Subscribe({
+  subscribe,
+}: {
+  subscribe: SectionType | any
+}) {
   if (!subscribe) return <SectionLoader />
 
   return (
     <SectionContainer
       classNames={{
+        base: 'border-t-1',
         container: 'py-20 gap-6 lg:gap-10 items-center',
       }}
       justify="center"
@@ -25,7 +27,9 @@ export default function SectionSubscribe() {
           {subscribe.title}
         </Heading>
       </div>
-      <div className="flex-1">subscribe form</div>
+      <div className="flex-1">
+        <SubscribeForm />
+      </div>
     </SectionContainer>
   )
 }
