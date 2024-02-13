@@ -1,13 +1,13 @@
 import { SectionType } from '@/types'
 import { Heading, SectionContainer } from '..'
-import { Image } from '@nextui-org/react'
+import { Button, Image } from '@nextui-org/react'
 
 export default function FeatureSection({
   featureItem,
-  containerClasses = '',
+  isReverseDirection = false,
 }: {
   featureItem: SectionType
-  containerClasses?: string
+  isReverseDirection?: boolean
 }) {
   const { title, subtitle, imageSrc, preloadImageSrc } = featureItem
 
@@ -15,21 +15,31 @@ export default function FeatureSection({
     <SectionContainer
       classNames={{
         base: 'overflow-hidden',
-        container: `py-12 md:flex-row gap-8 md:justify-center md:items-center ${containerClasses}`,
+        container: `py-12 md:flex-row gap-8 md:justify-center md:items-center ${isReverseDirection ? 'md:flex-row-reverse' : ''}`,
       }}
     >
-      <header className="flex-auto md:basis-1/2">
+      <div
+        className={`flex-auto md:basis-1/2 ${isReverseDirection ? 'lg:pr-unit-18' : 'lg:pl-unit-18'}`}
+      >
         <Heading variation="md" subheading={subtitle}>
           {title}
         </Heading>
-      </header>
+        <Button
+          radius="full"
+          color="warning"
+          variant="ghost"
+          className="mt-8 min-w-48"
+        >
+          Button
+        </Button>
+      </div>
       <div className="flex-auto md:basis-1/2">
         <Image
-          width={200}
+          width="auto"
           height={200}
           src={imageSrc}
           alt={title}
-          className="min-w-72 sm:min-w-80 md:min-w-[516px]"
+          className="min-w-72 sm:min-w-80 lg:min-w-[516px]"
         />
       </div>
     </SectionContainer>

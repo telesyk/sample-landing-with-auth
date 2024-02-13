@@ -36,13 +36,16 @@ export default function AppNavbar({
   )
   const { navMenu, userMenu } = menu
 
-  const handleNavPositionChange = useCallback((position: number) => {
-    position > 100
-      ? setNavClass(
-          'bg-gradient-to-bl from-pink-500/50 via-purple-500/50 to-teal-500/50 shadow-lg'
-        )
-      : setNavClass(pathname === '/' ? 'bg-transparent' : notHomeNavClass)
-  }, [])
+  const handleNavPositionChange = useCallback(
+    (position: number) => {
+      position > 100
+        ? setNavClass(
+            'bg-gradient-to-bl from-pink-500/50 via-purple-500/50 to-teal-500/50 shadow-lg'
+          )
+        : setNavClass(pathname === '/' ? 'bg-transparent' : notHomeNavClass)
+    },
+    [pathname]
+  )
 
   return (
     <Navbar

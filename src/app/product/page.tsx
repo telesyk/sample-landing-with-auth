@@ -26,16 +26,12 @@ export default async function Product() {
         features.map((item: SectionType, index: number) => {
           const even = index / 2 === 0
           return even ? (
-            <FeatureSection
-              key={item.title}
-              featureItem={item}
-              containerClasses="lg:pl-12"
-            />
+            <FeatureSection key={item.title} featureItem={item} />
           ) : (
             <FeatureSection
               key={item.title}
               featureItem={item}
-              containerClasses="lg:flex-row-reverse lg:pr-12"
+              isReverseDirection
             />
           )
         })}

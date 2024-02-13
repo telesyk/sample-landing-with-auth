@@ -48,7 +48,7 @@ export default function PricingCard({
       setAnnualPrice((monthlyPrice * 12).toFixed(2))
       setPriceValues(splitPriceValue(monthlyPrice))
     }
-  }, [paymentType])
+  }, [paymentType, monthlyPrice])
 
   const isFreePlan = priceValues[0] === 0
 
