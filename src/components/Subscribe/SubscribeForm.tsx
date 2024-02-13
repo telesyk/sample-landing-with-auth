@@ -3,7 +3,7 @@ import React from 'react'
 
 export default function SubscribeForm() {
   return (
-    <form className="flex gap-4 justify-center items-center">
+    <form className="flex flex-wrap gap-4 justify-center items-center">
       <Input
         isRequired
         type="email"

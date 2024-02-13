@@ -18,6 +18,7 @@ import PricingCard from './PricingCard'
 import Footer from './Footer'
 import SubscribeForm from './Subscribe/SubscribeForm'
 import Subscribe from './Subscribe'
+import FeatureSection from './FeatureSection'
 
 export {
   Container,
@@ -40,4 +41,5 @@ export {
   PricingCard,
   SubscribeForm,
   Subscribe,
+  FeatureSection,
 }

@@ -110,7 +110,21 @@
     "subscribe": {
       "title": "Subscribe",
       "subtitle": "Subscribe to get exclusive news & offer"
-    }
+    },
+    "features": [
+      {
+        "title": "Quick & Easy Process",
+        "subtitle": "Most calendars are designed for teams. Slate is designed for freelancers who want a simple way to plan their schedule.",
+        "imageSrc": "/feature-1.png",
+        "preloadImageSrc": "/hero_preload.png"
+      },
+      {
+        "title": "Perfect for Operations HR and Finance",
+        "subtitle": "Most calendars are designed for teams. Slate is designed for freelancers who want a simple way to plan their schedule.",
+        "imageSrc": "/feature-2.png",
+        "preloadImageSrc": "/hero_preload.png"
+      }
+    ]
   },
   "pages": {
     "home": {
