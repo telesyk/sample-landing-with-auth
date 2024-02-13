@@ -3,4 +3,4 @@ export const STORAGE_NAME = 'UserData'
 export const CURRENCY_SIGN = '$'
 export const ANNUAL_PAYMENT_TYPE = 'annual'
 export const PAYMENT_KEY = 'paymentType'
-export const ANNUAL_COEF = 0.15
+export const ANNUAL_COEF = 0.2
